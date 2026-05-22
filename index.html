@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arabie Saoudite</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ead5b2;
+    color: #2d5a3d;
+}
+
+/* Header con bandera */
+header {
+    background: linear-gradient(135deg, #0f6b43 0%, #0d5538 100%);
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,0 L0,0 Z" fill="%230f6b43" opacity="0.1"/></svg>') repeat-x;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,0 L0,0 Z" fill="%230f6b43" opacity="0.15"/></svg>') repeat-x;
+}
+
+header h1 {
+    font-size: 55px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header nav {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+header nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.3s;
+}
+
+header nav a:hover {
+    opacity: 0.8;
+}
+
+/* Section Introduction */
+.intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 60px 40px;
+    background-color: #ead5b2;
+}
+
+.intro-text h2 {
+    font-size: 45px;
+    color: #0f6b43;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2d5a3d;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Section Gastronomie Arabe */
+.gastro-section {
+    padding: 60px 40px;
+    background-color: white;
+}
+
+.gastro-section h2 {
+    text-align: center;
+    font-size: 45px;
+    color: #0f6b43;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.dish-card {
+    text-align: center;
+}
+
+.dish-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid #0f6b43;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.dish-card h3 {
+    color: #0f6b43;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.dish-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2d5a3d;
+}
+
+/* Texto descriptivo */
+.cuisine-description {
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 10px;
+    border-left: 5px solid #0f6b43;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2d5a3d;
+    font-style: italic;
+}
+
+/* Section Gastronomie Mexicaine */
+.gastro-mexican {
+    padding: 60px 40px;
+    background-color: #ead5b2;
+}
+
+.gastro-mexican h2 {
+    text-align: center;
+    font-size: 45px;
+    color: #0f6b43;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+/* Tabla Comparativa */
+.comparison-section {
+    padding: 60px 40px;
+    background-color: white;
+}
+
+.comparison-section h2 {
+    text-align: center;
+    font-size: 45px;
+    color: #0f6b43;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.comparison-table th {
+    background-color: #0f6b43;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.comparison-table td {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #2d5a3d;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comparison-table tr:hover {
+    background-color: #ead5b2;
+}
+
+/* QR Section */
+.qr-section {
+    background: linear-gradient(135deg, #0f6b43 0%, #0d5538 100%);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.qr-section h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.qr-section img {
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.qr-section p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #0f6b43;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    header h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <h1>L'Arabie Saoudite</h1>
+    <nav>
+        <a href="#history">Histoire</a>
+        <a href="#culture">Culture</a>
+        <a href="#society">Société</a>
+        <a href="#technology">Technologie</a>
+    </nav>
+</header>
+
+<!-- Introduction Section -->
+<section class="intro-section" id="history">
+    <div class="intro-text">
+        <h2>Introduction</h2>
+        <p>Le pays désigné pour ce travail est l'Arabie Saoudite, un pays avec des traditions très importantes, une culture moderne qui continue de croître et une grande influence dans le monde arabe.</p>
+        <p style="margin-top: 15px;">Ce projet comparera certains aspects culturels du Mexique et de l'Arabie Saoudite. L'objectif est de connaître les similitudes et les différences entre les deux pays, notamment dans la manière dont les jeunes vivent et profitent de leur culture.</p>
+    </div>
+    <div class="intro-image">
+        <img src="https://images.unsplash.com/photo-1518684029980-cf91ee70ee33?w=600&h=400&fit=crop" alt="La Kaaba - Arabie Saoudite">
+    </div>
+</section>
+
+<!-- Gastronomie Arabe -->
+<section class="gastro-section" id="culture">
+    <h2>La gastronomie arabe</h2>
+    
+    <div class="dishes-grid">
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd77538?w=300&h=250&fit=crop" alt="Mandi">
+            <h3>Mandi</h3>
+            <p>Originaire du Yémen et très populaire en Arabie saoudite. Sa spécificité repose sur la cuisson lente et souterraine de la viande d'agneau ou de poulet avec du riz basmati.</p>
+        </div>
+        
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1596040424244-3b69c3ef5bed?w=300&h=250&fit=crop" alt="Kabsa">
+            <h3>Kabsa</h3>
+            <p>Plat emblématique de l'Arabie saoudite. Préparé avec du riz, de la viande et des épices comme la cardamome et le safran.</p>
+        </div>
+        
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=250&fit=crop" alt="Saleeg">
+            <h3>Saleeg</h3>
+            <p>Plat crémeux à base de riz et de lait, souvent servi avec du poulet ou de l'agneau rôti.</p>
+        </div>
+        
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=250&fit=crop" alt="Mutabaq">
+            <h3>Mutabaq</h3>
+            <p>Une crêpe fourrée très populaire en Arabie Saoudite, riche et délicieuse, garnie de chocolat, cacahuètes, fromage ou lait concentré.</p>
+        </div>
+    </div>
+
+    <!-- Descripción de la cuisine saoudienne -->
+    <div class="cuisine-description">
+        <p>La cuisine saoudienne est le reflet direct de son héritage bédouin nomade et de la loi islamique (halal). Elle se caractérise par des saveurs chaudes et aromatiques, à base d'épices comme la cardamome et le safran, sans être piquante. Ses aliments de base sont le riz, l'agneau, le poulet et les dattes. Le plat national est le kabsa (riz à la viande épicée), et le rituel du service du gahwa (café traditionnel) est un symbole majeur d'hospitalité.</p>
+    </div>
+</section>
+
+<!-- Gastronomie Mexicaine -->
+<section class="gastro-mexican" id="society">
+    <h2>La gastronomie mexicaine</h2>
+    
+    <div class="dishes-grid">
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=250&fit=crop" alt="Mandi Mexicain">
+            <h3>Mandi</h3>
+            <p>Originaire du Yémen et très populaire en Arabie saoudite. Sa spécificité repose sur la cuisson lente et souterraine de la viande d'agneau ou de poulet avec du riz basmati.</p>
+        </div>
+        
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1618080672284-997922feca45?w=300&h=250&fit=crop" alt="Kabsa Mexicain">
+            <h3>Kabsa</h3>
+            <p>Plat emblématique de l'Arabie saoudite. Préparé avec du riz, de la viande et des épices comme la cardamome et le safran.</p>
+        </div>
+        
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=250&fit=crop" alt="Saleeg Mexicain">
+            <h3>Saleeg</h3>
+            <p>Originaire du Taif en Arabie Saoudite, aux autres, c'est un plat à goût doux, lourde et peu d'épices avec du lait et du bouillon pour la texture.</p>
+        </div>
+        
+        <div class="dish-card">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=250&fit=crop" alt="Mutabaq Mexicain">
+            <h3>Mutabaq</h3>
+            <p>Une crêpe fourrée très populaire en Arabie Saoudite. Elle encline dans deux Orient et Asie du Sud (Est). Elle est succulente dans deux Maqlubah (salée).</p>
+        </div>
+    </div>
+</section>
+
+<!-- Tabla Comparativa -->
+<section class="comparison-section" id="technology">
+    <h2>Comparaison: Arabie Saoudite vs Mexique</h2>
+    
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Aspect</th>
+                <th>Arabie Saoudite</th>
+                <th>Mexique</th>
+                <th>Similitudes / Différences</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Capitale</strong></td>
+                <td>Riyad</td>
+                <td>Mexico</td>
+                <td>Différence</td>
+            </tr>
+            <tr>
+                <td><strong>Langue officielle</strong></td>
+                <td>Arabe</td>
+                <td>Espagnol</td>
+                <td>Différence</td>
+            </tr>
+            <tr>
+                <td><strong>Religion principale</strong></td>
+                <td>Islam</td>
+                <td>Christianisme catholique</td>
+                <td>Différence</td>
+            </tr>
+            <tr>
+                <td><strong>Monnaie</strong></td>
+                <td>Riyal saoudien</td>
+                <td>Peso mexicain</td>
+                <td>Différence</td>
+            </tr>
+            <tr>
+                <td><strong>Type de gouvernement</strong></td>
+                <td>Monarchie</td>
+                <td>République fédérale</td>
+                <td>Différence</td>
+            </tr>
+            <tr>
+                <td><strong>Climat</strong></td>
+                <td>Désertique et très chaud</td>
+                <td>Varié: tropical, désertique et tempéré</td>
+                <td>Différence</td>
+            </tr>
+            <tr>
+                <td><strong>Gastronomie</strong></td>
+                <td>Riz, agneau, poulet, dattes</td>
+                <td>Tacos, maïs, haricots</td>
+                <td>Différence</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- QR Section -->
+<section class="qr-section">
+    <h2>📱 Escanea esta página</h2>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://carlomontano-lab.github.io/arabie-saoudite/" alt="Código QR">
+    <p>Apunta tu cámara al código QR para acceder a esta página desde cualquier dispositivo</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>Proyecto escolar sobre Arabia Saudita | Comparación Cultural México - Arabia Saudita</p>
+</footer>
+
+</body>
+</html>

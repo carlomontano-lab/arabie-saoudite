@@ -1,303 +1,339 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arabie Saoudite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabie Saoudite - Projet Scolaire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ead5b2;
+            color: #0f6b43;
+        }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ead5b2;
-    color: #2d5a3d;
-}
+        /* Header avec décoration */
+        header {
+            background: linear-gradient(to right, #0f6b43 0%, #0d5538 100%);
+            color: white;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Header con bandera */
-header {
-    background: linear-gradient(135deg, #0f6b43 0%, #0d5538 100%);
-    color: white;
-    padding: 40px 20px;
-    position: relative;
-    overflow: hidden;
-}
+        header::before,
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 20px;
+            width: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                #0f6b43 0px,
+                #0f6b43 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
 
-header::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: 0;
-    right: 0;
-    height: 150px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,0 L0,0 Z" fill="%230f6b43" opacity="0.1"/></svg>') repeat-x;
-}
+        header::before {
+            left: 0;
+        }
 
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,0 L0,0 Z" fill="%230f6b43" opacity="0.15"/></svg>') repeat-x;
-}
+        header::after {
+            bottom: 0;
+        }
 
-header h1 {
-    font-size: 55px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
 
-header nav {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
+        header h1 {
+            font-size: 55px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
 
-header nav a {
-    color: white;
-    margin: 0 20px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: opacity 0.3s;
-}
+        header nav {
+            text-align: center;
+            margin-top: 15px;
+        }
 
-header nav a:hover {
-    opacity: 0.8;
-}
+        header nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
 
-/* Section Introduction */
-.intro-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    padding: 60px 40px;
-    background-color: #ead5b2;
-}
+        header nav a:hover {
+            opacity: 0.8;
+        }
 
-.intro-text h2 {
-    font-size: 45px;
-    color: #0f6b43;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
+        /* Section Introduction */
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #ead5b2;
+        }
 
-.intro-text p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #2d5a3d;
-}
+        .intro-text h2 {
+            font-size: 45px;
+            color: #0f6b43;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-.intro-image img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+        .intro-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #0f6b43;
+            margin-bottom: 15px;
+        }
 
-/* Section Gastronomie Arabe */
-.gastro-section {
-    padding: 60px 40px;
-    background-color: white;
-}
+        .intro-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-.gastro-section h2 {
-    text-align: center;
-    font-size: 45px;
-    color: #0f6b43;
-    margin-bottom: 50px;
-    font-weight: bold;
-}
+        /* Section Gastronomie Arabe */
+        .gastro-section {
+            padding: 60px 40px;
+            background: linear-gradient(to bottom, white 0%, #f9f9f9 100%);
+        }
 
-.dishes-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
-}
+        .gastro-section h2 {
+            text-align: center;
+            font-size: 45px;
+            color: #0f6b43;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
 
-.dish-card {
-    text-align: center;
-}
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
 
-.dish-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border: 3px solid #0f6b43;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+        .dish-card {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-.dish-card h3 {
-    color: #0f6b43;
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
+        .dish-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #0f6b43;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
 
-.dish-card p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #2d5a3d;
-}
+        .dish-card h3 {
+            color: #0f6b43;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-/* Texto descriptivo */
-.cuisine-description {
-    background-color: #f5f5f5;
-    padding: 40px;
-    border-radius: 10px;
-    border-left: 5px solid #0f6b43;
-    font-size: 18px;
-    line-height: 1.8;
-    color: #2d5a3d;
-    font-style: italic;
-}
+        .dish-card p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #0f6b43;
+        }
 
-/* Section Gastronomie Mexicaine */
-.gastro-mexican {
-    padding: 60px 40px;
-    background-color: #ead5b2;
-}
+        /* Descripción de la cuisine */
+        .cuisine-description {
+            background-color: #f5f5f5;
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 5px solid #d8b14a;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #0f6b43;
+            margin-top: 30px;
+        }
 
-.gastro-mexican h2 {
-    text-align: center;
-    font-size: 45px;
-    color: #0f6b43;
-    margin-bottom: 50px;
-    font-weight: bold;
-}
+        /* Section Gastronomie Mexicaine */
+        .gastro-mexican {
+            padding: 60px 40px;
+            background-color: #ead5b2;
+        }
 
-/* Tabla Comparativa */
-.comparison-section {
-    padding: 60px 40px;
-    background-color: white;
-}
+        .gastro-mexican h2 {
+            text-align: center;
+            font-size: 45px;
+            color: #0f6b43;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
 
-.comparison-section h2 {
-    text-align: center;
-    font-size: 45px;
-    color: #0f6b43;
-    margin-bottom: 40px;
-    font-weight: bold;
-}
+        /* Tabla Comparativa */
+        .comparison-section {
+            padding: 60px 40px;
+            background: linear-gradient(to bottom, white 0%, #f9f9f9 100%);
+        }
 
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+        .comparison-section h2 {
+            text-align: center;
+            font-size: 45px;
+            color: #0f6b43;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
 
-.comparison-table th {
-    background-color: #0f6b43;
-    color: white;
-    padding: 20px;
-    text-align: left;
-    font-weight: bold;
-    font-size: 16px;
-}
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: white;
+        }
 
-.comparison-table td {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    font-size: 16px;
-    color: #2d5a3d;
-}
+        .comparison-table th {
+            background-color: #0f6b43;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 15px;
+            border: 1px solid #0f6b43;
+        }
 
-.comparison-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
+        .comparison-table td {
+            padding: 18px 20px;
+            border: 1px solid #ddd;
+            font-size: 15px;
+            color: #0f6b43;
+        }
 
-.comparison-table tr:hover {
-    background-color: #ead5b2;
-}
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
-/* QR Section */
-.qr-section {
-    background: linear-gradient(135deg, #0f6b43 0%, #0d5538 100%);
-    color: white;
-    padding: 60px 40px;
-    text-align: center;
-}
+        .comparison-table tr:hover {
+            background-color: #ead5b2;
+        }
 
-.qr-section h2 {
-    font-size: 35px;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
+        /* QR Section */
+        .qr-section {
+            background: linear-gradient(135deg, #0f6b43 0%, #0d5538 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
 
-.qr-section img {
-    max-width: 400px;
-    width: 100%;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
+        .qr-section h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
 
-.qr-section p {
-    font-size: 18px;
-    margin-top: 20px;
-}
+        .qr-section img {
+            max-width: 400px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
 
-/* Footer */
-footer {
-    background-color: #0f6b43;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 16px;
-}
+        .qr-section p {
+            font-size: 16px;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .intro-section {
-        grid-template-columns: 1fr;
-    }
-    
-    .dishes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    header h1 {
-        font-size: 35px;
-    }
-}
+        /* Footer */
+        footer {
+            background-color: #0f6b43;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
 
-@media (max-width: 480px) {
-    .dishes-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .comparison-table th,
-    .comparison-table td {
-        padding: 10px;
-        font-size: 14px;
-    }
-}
-</style>
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .dishes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .intro-section {
+                grid-template-columns: 1fr;
+            }
+
+            .dishes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            .gastro-section h2,
+            .gastro-mexican h2,
+            .comparison-section h2 {
+                font-size: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dishes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-section {
+                padding: 40px 20px;
+            }
+
+            header nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <!-- Header -->
 <header>
-    <h1>L'Arabie Saoudite</h1>
-    <nav>
-        <a href="#history">Histoire</a>
-        <a href="#culture">Culture</a>
-        <a href="#society">Société</a>
-        <a href="#technology">Technologie</a>
-    </nav>
+    <div class="header-content">
+        <h1>L'Arabie Saoudite</h1>
+        <nav>
+            <a href="#history">Histoire</a>
+            <a href="#culture">Culture</a>
+            <a href="#society">Société</a>
+            <a href="#technology">Technologie</a>
+        </nav>
+    </div>
 </header>
 
 <!-- Introduction Section -->
@@ -305,10 +341,10 @@ footer {
     <div class="intro-text">
         <h2>Introduction</h2>
         <p>Le pays désigné pour ce travail est l'Arabie Saoudite, un pays avec des traditions très importantes, une culture moderne qui continue de croître et une grande influence dans le monde arabe.</p>
-        <p style="margin-top: 15px;">Ce projet comparera certains aspects culturels du Mexique et de l'Arabie Saoudite. L'objectif est de connaître les similitudes et les différences entre les deux pays, notamment dans la manière dont les jeunes vivent et profitent de leur culture.</p>
+        <p>Ce projet comparera certains aspects culturels du Mexique et de l'Arabie Saoudite. L'objectif est de connaître les similitudes et les différences entre les deux pays, notamment dans la manière dont les jeunes vivent et profitent de leur culture. Nous montrerons également les goûts, les coutumes, les préférences et les activités des jeunes du Mexique et d'Arabie Saoudite pour en apprendre davantage sur leurs cultures.</p>
     </div>
     <div class="intro-image">
-        <img src="https://images.unsplash.com/photo-1518684029980-cf91ee70ee33?w=600&h=400&fit=crop" alt="La Kaaba - Arabie Saoudite">
+        <img src="https://images.unsplash.com/photo-1518684029980-cf91ee70ee33?w=600&h=500&fit=crop" alt="La Kaaba - Arabie Saoudite">
     </div>
 </section>
 
@@ -318,33 +354,33 @@ footer {
     
     <div class="dishes-grid">
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd77538?w=300&h=250&fit=crop" alt="Mandi">
+            <img src="https://images.unsplash.com/photo-1625867767407-2c20b0cc8945?w=300&h=200&fit=crop" alt="Mandi">
             <h3>Mandi</h3>
-            <p>Originaire du Yémen et très populaire en Arabie saoudite. Sa spécificité repose sur la cuisson lente et souterraine de la viande d'agneau ou de poulet avec du riz basmati.</p>
+            <p>Originaire du Yémen et très populaire en Arabie saoudite. Sa spécificité repose sur la cuisson lente et souterraine de la viande d'agneau ou de poulet avec du riz basmati. La singularité d'un flamme locale par des mélanges d'épices Hawai.</p>
         </div>
         
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1596040424244-3b69c3ef5bed?w=300&h=250&fit=crop" alt="Kabsa">
+            <img src="https://images.unsplash.com/photo-1596040424244-3b69c3ef5bed?w=300&h=200&fit=crop" alt="Kabsa">
             <h3>Kabsa</h3>
-            <p>Plat emblématique de l'Arabie saoudite. Préparé avec du riz, de la viande et des épices comme la cardamome et le safran.</p>
+            <p>Plat emblématique de l'Arabie saoudite. Préparé avec du riz, de la viande et des épices comme la cardamome et le safran. C'est un plat qui est considéré comme l'un des plats les plus goûteux entre la gastronomie Arabe.</p>
         </div>
         
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=250&fit=crop" alt="Saleeg">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=200&fit=crop" alt="Saleeg">
             <h3>Saleeg</h3>
-            <p>Plat crémeux à base de riz et de lait, souvent servi avec du poulet ou de l'agneau rôti.</p>
+            <p>Originaire du Taif en Arabie Saoudite, aux autres, c'est un plat à goût doux, lourd et peu d'épices avec du lait et du bouillon pour la texture.</p>
         </div>
         
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=250&fit=crop" alt="Mutabaq">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=200&fit=crop" alt="Mutabaq">
             <h3>Mutabaq</h3>
-            <p>Une crêpe fourrée très populaire en Arabie Saoudite, riche et délicieuse, garnie de chocolat, cacahuètes, fromage ou lait concentré.</p>
+            <p>Une crêpe fourrée très populaire en Arabie Saoudite. Elle encline dans deux Orient et Asie du Sud (Est). Elle est succulente dans deux Maqlubah (salée). Comme un gâteau éponge, garni de chocolat, cacahuètes, fromage ou lait concentré.</p>
         </div>
     </div>
 
     <!-- Descripción de la cuisine saoudienne -->
     <div class="cuisine-description">
-        <p>La cuisine saoudienne est le reflet direct de son héritage bédouin nomade et de la loi islamique (halal). Elle se caractérise par des saveurs chaudes et aromatiques, à base d'épices comme la cardamome et le safran, sans être piquante. Ses aliments de base sont le riz, l'agneau, le poulet et les dattes. Le plat national est le kabsa (riz à la viande épicée), et le rituel du service du gahwa (café traditionnel) est un symbole majeur d'hospitalité.</p>
+        <p><strong>La cuisine saoudienne est le reflet direct de son héritage bédouin nomade et de la loi islamique (halal). Elle se caractérise par des saveurs chaudes et aromatiques, à base d'épices comme la cardamome et le safran, sans être piquante. Ses aliments de base sont le riz, l'agneau, le poulet et les dattes. Le plat national est le kabsa (riz à la viande épicée), et le rituel du service du gahwa (café traditionnel) est un symbole majeur d'hospitalité.</strong></p>
     </div>
 </section>
 
@@ -354,25 +390,25 @@ footer {
     
     <div class="dishes-grid">
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=250&fit=crop" alt="Mandi Mexicain">
+            <img src="https://images.unsplash.com/photo-1585238341710-4dd0de080666?w=300&h=200&fit=crop" alt="Mandi Mexicain">
             <h3>Mandi</h3>
             <p>Originaire du Yémen et très populaire en Arabie saoudite. Sa spécificité repose sur la cuisson lente et souterraine de la viande d'agneau ou de poulet avec du riz basmati.</p>
         </div>
         
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1618080672284-997922feca45?w=300&h=250&fit=crop" alt="Kabsa Mexicain">
+            <img src="https://images.unsplash.com/photo-1618080672284-997922feca45?w=300&h=200&fit=crop" alt="Kabsa Mexicain">
             <h3>Kabsa</h3>
             <p>Plat emblématique de l'Arabie saoudite. Préparé avec du riz, de la viande et des épices comme la cardamome et le safran.</p>
         </div>
         
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=250&fit=crop" alt="Saleeg Mexicain">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=200&fit=crop" alt="Saleeg Mexicain">
             <h3>Saleeg</h3>
-            <p>Originaire du Taif en Arabie Saoudite, aux autres, c'est un plat à goût doux, lourde et peu d'épices avec du lait et du bouillon pour la texture.</p>
+            <p>Originaire du Taif en Arabie Saoudite, aux autres, c'est un plat à goût doux, lourd et peu d'épices avec du lait et du bouillon pour la texture.</p>
         </div>
         
         <div class="dish-card">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=250&fit=crop" alt="Mutabaq Mexicain">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=200&fit=crop" alt="Mutabaq Mexicain">
             <h3>Mutabaq</h3>
             <p>Une crêpe fourrée très populaire en Arabie Saoudite. Elle encline dans deux Orient et Asie du Sud (Est). Elle est succulente dans deux Maqlubah (salée).</p>
         </div>
@@ -448,7 +484,7 @@ footer {
 
 <!-- Footer -->
 <footer>
-    <p>Proyecto escolar sobre Arabia Saudita | Comparación Cultural México - Arabia Saudita</p>
+    Proyecto escolar sobre Arabia Saudita | Comparación Cultural México - Arabia Saudita
 </footer>
 
 </body>
